@@ -6,14 +6,14 @@ const LoadAllPets = async () => {
 
 const displayAllPets = (pets) => {
     const allPetsContainer = document.getElementById('all-pets-container');
+    allPetsContainer.innerHTML = ''
     pets.forEach(pet => {
-        console.log(pet);
         const { image, breed, date_of_birth, gender, price, pet_name } = pet
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="border p-5 rounded-lg">
                             <figure>
-                                <img class="rounded-lg"
+                                <img class="rounded-lg w-full"
                                     src="${image}"
                                     alt="">
                             </figure>
@@ -48,7 +48,7 @@ const displayAllPets = (pets) => {
                                     </div>
                                     <div
                                         class="border px-3 py-2 text-[#0E7A81] cursor-pointer  font-extrabold rounded-lg mt-4">
-                                        Adopt
+                                        Details
                                     </div>
                                 </div>
                             </div>
@@ -57,6 +57,5 @@ const displayAllPets = (pets) => {
         allPetsContainer.appendChild(div)
     });
 }
-
 
 LoadAllPets();
