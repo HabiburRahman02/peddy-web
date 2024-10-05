@@ -7,7 +7,6 @@ const LoadAllPetsCategories = async () => {
 const displayAllPetsCategories = (categories) => {
     const petsCategoryContainer = document.getElementById('pets-category-container');
     categories.forEach(category => {
-        console.log(category);
         const div = document.createElement('div');
         div.innerHTML = `
           <button id="btn-${category.category}" onclick="handleCategory('${category.category}')" class="btn-category border px-12 py-4 font-bold rounded-2xl flex gap-2 items-center">
