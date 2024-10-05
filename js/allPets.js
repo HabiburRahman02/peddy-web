@@ -7,6 +7,24 @@ const LoadAllPets = async () => {
 const displayAllPets = (pets) => {
     const allPetsContainer = document.getElementById('all-pets-container');
     allPetsContainer.innerHTML = ''
+
+    if (pets.length === 0) {
+        allPetsContainer.classList.remove('grid')
+        allPetsContainer.innerHTML = `
+        <div class="text-center space-y-4 bg-gray-50 p-5 max-w-[700px] mx-auto">
+            <img class="mx-auto mt-2" src="images/error.webp" alt="">
+            <h3 class="text-4xl font-extrabold">No Information Available</h3>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at
+                its layout. The point of using Lorem Ipsum is that it has a.</p>
+        </div>
+        `
+        return;
+    }
+    else{
+        allPetsContainer.classList.add('grid')
+    }
+
     pets.forEach(pet => {
         const { image, breed, date_of_birth, gender, price, pet_name } = pet
         const div = document.createElement('div');
