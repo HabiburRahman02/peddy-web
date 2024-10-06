@@ -20,8 +20,8 @@
     </style>
 </head>
 
-<body class="max-w-7xl mx-auto text-[#131313] px-1">
-    <header>
+<body class=" text-[#131313]">
+    <header class="max-w-7xl mx-auto px-1">
         <nav>
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
@@ -65,8 +65,10 @@
                 <p class="text-gray-500">Bringing Families Together ❤️‍🔥</p>
                 <h1 class="text-5xl font-extrabold">Your Path to Adoption Starts Here</h1>
             </div>
-            <p class="text-[#131313]">It is a long established fact that a reader will be distracted by the readable
-                content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            <p class="text-[#131313]">Dogs are known for their loyalty and playful nature, while cats are often admired
+                for their independence and grace.
+                Both dogs and cats can make wonderful companions, each bringing their own unique charm to a household.
+            </p>
             <div>
                 <a href="#main-sect">
                     <button class="btn btn-accent bg-[#0E7A81] text-white border-0">View More</button>
@@ -76,13 +78,13 @@
         </section>
         <!-- your path end -->
     </header>
-    <main>
+    <main class="max-w-7xl mx-auto px-1">
         <!-- best friend start -->
         <section id="main-sect" class="mt-24 mb-14">
             <div class="space-y-6 text-center max-w-[630px] mx-auto mb-12">
                 <h3 class="text-4xl font-extrabold">Adopt Your Best Friend</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <p>Some people prefer the energetic and affectionate demeanor of dogs, while others enjoy the quiet and
+                    mysterious presence of cats.</p>
             </div>
 
             <!-- dynamic all pets categories -->
@@ -96,12 +98,14 @@
                     <h2 class="text-2xl font-bold">Best Deal For You</h2>
                     <button class="btn btn-accent bg-[#0E7A81] text-white border-0">Sort By Price</button>
                 </div>
-                <div class="md:flex gap-6">
-                    <div id="all-pets-container" class="md:w-3/4 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="lg:flex gap-6">
+                    <div class="lg:w-3/4">
+                        <div id="all-pets-container" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
 
+                        </div>
                     </div>
-                    <div class="md:w-1/4">
+                    <div class="lg:w-1/4">
                         <div id="pets-content" class=" grid grid-cols-2 gap-6 border rounded-lg p-5">
 
                         </div>
@@ -112,7 +116,46 @@
         <!-- best friend end -->
 
     </main>
-    <footer>
+    <div>
+        <div id="modal-container">
+
+        </div>
+    </div>
+    <footer class="bg-[#131313] text-white">
+        <footer class="footer max-w-7xl mx-auto py-24 md:flex justify-between text-gray-300 text-[16px]">
+            <nav class="space-y-2">
+                <div class="flex items-center gap-2">
+                    <img src="images/logo.webp" alt="">
+                    <h3 class="text-3xl font-bold text-white">Peddy</h3>
+                </div>
+                <a class="link link-hover">Location: Dhanmondi, Dhaka-1202</a>
+                <a class="link link-hover">Phone: 01779888454</a>
+                <a class="link link-hover">Email: habibur88454@gmail.com</a>
+                <a class="link link-hover">Openings hours: 9.00 AM - 8.00 PM</a>
+                <div class="flex gap-6">
+                    <i class="fa-brands fa-facebook text-3xl text-blue-400"></i>
+                    <i class="fa-brands fa-youtube text-3xl text-red-400"></i>
+                    <i class="fa-brands fa-twitter text-3xl text-green-400"></i>
+                    <i class="fa-brands fa-instagram text-3xl text-amber-400"></i>
+
+                </div>
+            </nav>
+            <nav class="space-y-2 text-gray-400">
+                <h6 class="text-xl text-white">Useful Links</h6>
+                <a class="link link-hover">Home</a>
+                <a class="link link-hover">About us</a>
+                <a class="link link-hover">Contact</a>
+                <a class="link link-hover">Animal</a>
+                <a class="link link-hover">Foundation</a>
+            </nav>
+            <nav class="space-y-2 text-gray-400">
+                <h6 class="text-xl text-white">Drop a Message</h6>
+                <input type="text" placeholder="Enter your email"
+                    class="input input-bordered w-full max-w-xs bg-gray-800" />
+                <button class="btn btn-wide bg-[#0E7A81] border-none text-white font-bold text-lg">Subscribe</button>
+            </nav>
+        </footer>
+
     </footer>
 
     <script src="js/script.js"></script>

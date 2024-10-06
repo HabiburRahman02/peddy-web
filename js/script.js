@@ -1,7 +1,11 @@
 const LoadAllPetsCategories = async () => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/categories`);
-    const data = await res.json();
-    displayAllPetsCategories(data.categories);
+    try {
+        const res = await fetch(`https://openapi.programming-hero.com/api/peddy/categories`);
+        const data = await res.json();
+        displayAllPetsCategories(data.categories);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const displayAllPetsCategories = (categories) => {
@@ -18,9 +22,13 @@ const displayAllPetsCategories = (categories) => {
 }
 
 const handleCategory = async (id) => {
+   try {
     const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`);
     const data = await res.json();
     displayAllPets(data.data)
+   } catch (error) {
+    console.log(error);
+   }
 
     // remove active btn classes
     const buttons = document.getElementsByClassName('btn-category');
