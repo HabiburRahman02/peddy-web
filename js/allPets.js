@@ -69,9 +69,9 @@ const displayAllPets = (pets) => {
                                         <i class="fa-regular fa-thumbs-up"></i>
                                     </div>
                                     <button
-                                        id="btn-adopt"
-                                        onclick="handleAdopt()"
-                                        class="border px-3 py-2 text-[#0E7A81] cursor-pointer  font-extrabold rounded-lg mt-4">
+                                        
+                                        onclick="handleAdopt('${petId}')"
+                                        class="btn-adopt-${petId} border px-3 py-2 text-[#0E7A81] cursor-pointer  font-extrabold rounded-lg mt-4">
                                         Adopt
                                     </button>
                                     <div
@@ -87,7 +87,7 @@ const displayAllPets = (pets) => {
     });
 }
 
-const handleAdopt = () => {
+const handleAdopt = (petId) => {
     my_modal_5.showModal()
     const countContainer = document.getElementById('count');
     let count = 4
@@ -97,8 +97,16 @@ const handleAdopt = () => {
         if (count <= 0) {
             clearInterval(intervalId)
             my_modal_5.close();
+
+            // adopted btn disabled
+            const adoptBtn = document.getElementsByClassName(`btn-adopt-${petId}`);
+            for (const btn of adoptBtn) {
+                btn.setAttribute('disabled', true)
+                btn.innerHTML = 'Adopted'
+                btn.style.cursor = 'not-allowed'
+                btn.classList.add('bg-gray-100')
+            }
         }
-        console.log(count);
     }, 1000);
 }
 
