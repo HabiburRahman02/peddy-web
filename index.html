@@ -91,12 +91,15 @@
             <div id="pets-category-container" class="grid grid-cols-2 gap-6 md:flex justify-between mb-8">
 
             </div>
+            <div id="loader" class="hidden text-center">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
 
             <!-- best deal start -->
             <div>
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-2xl font-bold">Best Deal For You</h2>
-                    <button class="btn btn-accent bg-[#0E7A81] text-white border-0">Sort By Price</button>
+                    <button onclick="handleSortByPrice()" class="btn btn-accent bg-[#0E7A81] text-white border-0">Sort By Price</button>
                 </div>
                 <div class="lg:flex gap-6">
                     <div class="lg:w-3/4">
@@ -122,7 +125,7 @@
         </div>
     </div>
     <footer class="bg-[#131313] text-white">
-        <footer class="footer max-w-7xl mx-auto py-24 md:flex justify-between text-gray-300 text-[16px]">
+        <footer class="footer max-w-7xl mx-auto py-24 md:flex justify-between text-gray-300 px-6 md:px-0 text-[16px]">
             <nav class="space-y-2">
                 <div class="flex items-center gap-2">
                     <img src="images/logo.webp" alt="">

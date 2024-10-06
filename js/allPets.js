@@ -1,4 +1,6 @@
 const LoadAllPets = async () => {
+    const loader = document.getElementById('loader');
+    loader.classList.remove('hidden')
     try {
         const res = await fetch(` https://openapi.programming-hero.com/api/peddy/pets`);
         const data = await res.json();
@@ -9,6 +11,9 @@ const LoadAllPets = async () => {
 }
 
 const displayAllPets = (pets) => {
+    const loader = document.getElementById('loader');
+    loader.classList.add('hidden')
+
     const allPetsContainer = document.getElementById('all-pets-container');
     allPetsContainer.innerHTML = ''
 
@@ -55,7 +60,7 @@ const displayAllPets = (pets) => {
                                     </div>
                                     <div class="flex items-center gap-1 border-b pb-4">
                                         <i class="fa-solid fa-dollar-sign h-5 w-5"></i>
-                                        <p>Price: ${price}$</p>
+                                        <p>Price: ${price ? price : 'Not Found'}$</p>
                                     </div>
                                 </div>
 
@@ -149,5 +154,16 @@ const showPetDetails = async (id) => {
     my_modal_1.showModal()
 }
 
+const handleSortByPrice = async () => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
+    const data = await res.json();
+    displaySortByPrice(data.pets);
+}
+
+const displaySortByPrice = (pets) => {
+    console.log(pets);
+    const sortedPets = pets.sort((a, b) => b.price - a.price);
+    displayAllPets(sortedPets)
+}
 LoadAllPets();
 

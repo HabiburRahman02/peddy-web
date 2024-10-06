@@ -22,13 +22,20 @@ const displayAllPetsCategories = (categories) => {
 }
 
 const handleCategory = async (id) => {
-   try {
-    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`);
-    const data = await res.json();
-    displayAllPets(data.data)
-   } catch (error) {
-    console.log(error);
-   }
+    try {
+        const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`);
+        const data = await res.json();
+
+        const loader = document.getElementById('loader');
+        loader.classList.remove('hidden')
+
+        setTimeout(() => {
+            displayAllPets(data.data)
+        }, 2000);
+        
+    } catch (error) {
+        console.log(error);
+    }
 
     // remove active btn classes
     const buttons = document.getElementsByClassName('btn-category');
