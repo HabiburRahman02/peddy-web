@@ -24,7 +24,7 @@ const displayAllPets = (pets) => {
             <img class="mx-auto mt-2" src="images/error.webp" alt="">
             <h3 class="text-4xl font-extrabold">No Information Available</h3>
             <p>"No content available at the moment. Please check back later."
-"Sorry, there is currently no content to display."</p>
+            "Sorry, there is currently no content to display."</p>
         </div>
         `
         return;
@@ -69,6 +69,8 @@ const displayAllPets = (pets) => {
                                         <i class="fa-regular fa-thumbs-up"></i>
                                     </div>
                                     <div
+                                    id="btn-adopt"
+                                        onclick="handleAdopt()"
                                         class="border px-3 py-2 text-[#0E7A81] cursor-pointer  font-extrabold rounded-lg mt-4">
                                         Adopt
                                     </div>
@@ -83,6 +85,22 @@ const displayAllPets = (pets) => {
         `
         allPetsContainer.appendChild(div)
     });
+}
+
+const handleAdopt = () => {
+    const countContainer = document.getElementById('count');
+
+    let count = 4
+    const intervalId = setInterval(() => {
+        count--
+        if (count < 1) {
+            clearInterval(intervalId)
+        }
+
+        countContainer.innerText = count
+        my_modal_5.showModal()
+        document.getElementById('new-modal').classList.add('hidden')
+    }, 1000);
 }
 
 const handleLike = (image) => {
@@ -163,7 +181,17 @@ const handleSortByPrice = async () => {
 const displaySortByPrice = (pets) => {
     console.log(pets);
     const sortedPets = pets.sort((a, b) => b.price - a.price);
-    displayAllPets(sortedPets)
+    const loader = document.getElementById('loader');
+    loader.classList.remove('hidden')
+
+    // remove prev loaded data
+    document.getElementById('all-pets-container').classList.add('hidden')
+
+    setTimeout(() => {
+        displayAllPets(sortedPets);
+        // show loaded data
+        document.getElementById('all-pets-container').classList.remove('hidden')
+    }, 2000);
 }
 LoadAllPets();
 

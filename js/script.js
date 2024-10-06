@@ -9,6 +9,7 @@ const LoadAllPetsCategories = async () => {
 }
 
 const displayAllPetsCategories = (categories) => {
+    document.getElementById('pets-category-container').innerHTML = ''
     const petsCategoryContainer = document.getElementById('pets-category-container');
     categories.forEach(category => {
         const div = document.createElement('div');
@@ -28,11 +29,15 @@ const handleCategory = async (id) => {
 
         const loader = document.getElementById('loader');
         loader.classList.remove('hidden')
+        // remove prev loaded data
+        document.getElementById('all-pets-container').classList.add('hidden')
 
         setTimeout(() => {
             displayAllPets(data.data)
+            // show loaded data
+            document.getElementById('all-pets-container').classList.remove('hidden')
         }, 2000);
-        
+
     } catch (error) {
         console.log(error);
     }
@@ -41,7 +46,7 @@ const handleCategory = async (id) => {
     const buttons = document.getElementsByClassName('btn-category');
     for (const button of buttons) {
         button.classList.remove('bg-green-100', 'rounded-l-full', 'rounded-r-full')
-        console.log(button);
+        // console.log(button);
     }
 
     // add active btn classes
