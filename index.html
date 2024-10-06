@@ -125,22 +125,7 @@
 
         </div>
     </div>
-    <!-- modal start -->
-    <!-- Open the modal using ID.showModal() method -->
-    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-            <h3 class="text-lg font-bold">Hello!</h3>
-            <p id="count">Count:</p>
-            <div class="modal-action">
-                <form method="dialog">
-                    <!-- if there is a button in form, it will close the modal -->
-                    <button class="btn">Close</button>
-                </form>
-            </div>
-        </div>
-    </dialog>
-    <!-- modal end -->
+
     <footer class="bg-[#131313] text-white">
         <footer class="footer max-w-7xl mx-auto py-24 md:flex justify-between text-gray-300 px-6 md:px-0 text-[16px]">
             <nav class="space-y-2">
@@ -178,6 +163,18 @@
 
     </footer>
 
+    <!-- modal start -->
+    <div id="count-modal">
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box text-center space-y-4">
+                <i class="fa-regular fa-handshake text-5xl"></i>
+                <h3 class="font-extrabold text-3xl">Congrates!</h3>
+                <p class="text-xl font-medium">Adoption process is start for your pet</p>
+                <p id="count" class="text-4xl font-extrabold">0</p>
+            </div>
+        </dialog>
+    </div>
+    <!-- modal end -->
     <script src="js/script.js"></script>
     <script src="js/allPets.js"></script>
 </body>

@@ -68,12 +68,12 @@ const displayAllPets = (pets) => {
                                     <div onclick="handleLike('${image}')" class="border px-4 py-2 rounded-lg mt-4 cursor-pointer">
                                         <i class="fa-regular fa-thumbs-up"></i>
                                     </div>
-                                    <div
-                                    id="btn-adopt"
+                                    <button
+                                        id="btn-adopt"
                                         onclick="handleAdopt()"
                                         class="border px-3 py-2 text-[#0E7A81] cursor-pointer  font-extrabold rounded-lg mt-4">
                                         Adopt
-                                    </div>
+                                    </button>
                                     <div
                                     onclick="showPetDetails('${petId}')"
                                         class="border px-3 py-2 text-[#0E7A81] cursor-pointer  font-extrabold rounded-lg mt-4">
@@ -88,18 +88,17 @@ const displayAllPets = (pets) => {
 }
 
 const handleAdopt = () => {
+    my_modal_5.showModal()
     const countContainer = document.getElementById('count');
-
     let count = 4
     const intervalId = setInterval(() => {
         count--
-        if (count < 1) {
+        countContainer.innerHTML = count;
+        if (count <= 0) {
             clearInterval(intervalId)
+            my_modal_5.close();
         }
-
-        countContainer.innerText = count
-        my_modal_5.showModal()
-        document.getElementById('new-modal').classList.add('hidden')
+        console.log(count);
     }, 1000);
 }
 
