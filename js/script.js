@@ -52,8 +52,6 @@ const handleCategory = async (id) => {
     // add active btn classes
     const activeBtn = document.getElementById(`btn-${id}`);
     activeBtn.classList.add('bg-green-100', 'rounded-l-full', 'rounded-r-full')
-
-
 }
 
 LoadAllPetsCategories();

@@ -186,7 +186,7 @@ const handleSortByPrice = async () => {
 }
 
 const displaySortByPrice = (pets) => {
-    console.log(pets);
+    // console.log(pets);
     const sortedPets = pets.sort((a, b) => b.price - a.price);
     const loader = document.getElementById('loader');
     loader.classList.remove('hidden')
